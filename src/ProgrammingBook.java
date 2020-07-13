@@ -1,14 +1,31 @@
 public class ProgrammingBook extends Book {
     private String language;
     private boolean frameWork = true;
+    private final String JAVA_BOOK = " JAVA";
+    private static int countJava = 0;
+    private static double sumBookPrice = 0;
+
 
     public ProgrammingBook(){
 
     }
 
-    public ProgrammingBook(String language, boolean frameWork) {
+    public ProgrammingBook(String language, double price) {
         this.language = language;
-        this.frameWork = frameWork;
+        super.setPrice(price);
+        sumBookPrice += price;
+
+        if (language.equals(JAVA_BOOK)) {
+            countJava++;
+        }
+    }
+
+    public static int getCountJava() {
+        return countJava;
+    }
+
+    public static double getTotalMoney() {
+        return sumBookPrice;
     }
 
     public ProgrammingBook(int bookCode, String name, double price, String author, String language, boolean frameWork) {
