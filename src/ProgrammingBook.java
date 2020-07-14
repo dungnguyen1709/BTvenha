@@ -1,7 +1,7 @@
 public class ProgrammingBook extends Book {
     private String language;
     private boolean frameWork = true;
-    private final String JAVA_BOOK = " JAVA";
+    private final String JAVA_BOOK = " JAVA ";
     private static int countJava = 0;
     private static double sumBookPrice = 0;
 

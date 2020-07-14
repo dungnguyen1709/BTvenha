@@ -5,6 +5,7 @@ public class Main {
 
         book = new Book(1709, " CodeGym ", 65000.0, "VuThiKieuAnh");
         System.out.println(book);
+
         ProgrammingBook prgB1 = new ProgrammingBook(" JAVA ", 65000.0);
         ProgrammingBook prgB2 = new ProgrammingBook(" JAVA ", 65000.0);
         ProgrammingBook prgB3 = new ProgrammingBook(" PHP ", 32500.0);
