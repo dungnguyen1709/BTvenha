@@ -1,12 +1,12 @@
 public class ProgrammingBook extends Book {
     private String language;
     private boolean frameWork = true;
-    private final String JAVA_BOOK = " JAVA ";
+    private final String JAVA_BOOK = "JAVA";
     private static int countJava = 0;
     private static double sumBookPrice = 0;
 
 
-    public ProgrammingBook(){
+    public ProgrammingBook() {
 
     }
 
@@ -40,6 +40,9 @@ public class ProgrammingBook extends Book {
 
     public void setLanguage(String language) {
         this.language = language;
+        if (language.equals(JAVA_BOOK)) {
+            countJava++;
+        }
     }
 
     public boolean isFrameWork() {
@@ -53,6 +56,13 @@ public class ProgrammingBook extends Book {
     @Override
     public String toString() {
         return " the language : " + getLanguage() +
-                " the framework : " + (isFrameWork() ? " framework " : " not framework " ) + super.toString();
+                " the framework : " + (isFrameWork() ? " framework " : " not framework ") + super.toString();
+    }
+
+    @Override
+    public String show() {
+        return "[" +
+        this.getBookCode()+ "\t" +
+                this.getName() + "\t" + this.getPrice() + "\t" + this.getAuthor() + "\t" + this.getLanguage() + "\t" + this.isFrameWork()+ "]";
     }
 }

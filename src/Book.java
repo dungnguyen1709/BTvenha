@@ -3,6 +3,8 @@
      private String name;
      private double price;
      private String author;
+     private static double sumBookPrice = 0;
+
 
      public Book() {
      }
@@ -31,12 +33,26 @@
      }
 
      public double getPrice() {
+
          return price;
      }
 
      public void setPrice(double price) {
+         sumBookPrice+=price;
          this.price = price;
+    }
+
+     public static double getTotalMoney() {
+         return sumBookPrice;
+
      }
+
+     public String show(){
+         return "";
+
+     }
+
+
 
      public String getAuthor() {
          return author;

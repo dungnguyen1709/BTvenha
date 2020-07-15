@@ -1,13 +1,15 @@
+import java.util.Scanner;
+
 public class FictionBook extends Book {
     private String cateGory;
-    private static double sumBookPrice = 0;
+
 
     public FictionBook(){
     }
 
     public FictionBook(double price) {
         super.setPrice(price);
-        sumBookPrice += price;
+
 
     }
 
@@ -16,10 +18,9 @@ public class FictionBook extends Book {
         this.cateGory = cateGory;
     }
 
-    public static double getTotalMoney() {
-        return sumBookPrice;
 
-    }
+
+
 
     public String getCateGory() {
         return cateGory;
@@ -32,5 +33,12 @@ public class FictionBook extends Book {
     @Override
     public String toString() {
         return " The category : " + getCateGory() + super.toString();
+    }
+
+    @Override
+    public String show() {
+        return "[" +
+                this.getBookCode()+ "\t" +
+                this.getName() + "\t" + this.getPrice() + "\t" + this.getAuthor() +  "]";
     }
 }

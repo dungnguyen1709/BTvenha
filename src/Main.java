@@ -1,25 +1,61 @@
+import javax.swing.*;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Book book = new Book();
-        System.out.println(book);
 
-        book = new Book(1709, " CodeGym ", 65000.0, "VuThiKieuAnh");
-        System.out.println(book);
+        Scanner sc = new Scanner(System.in);
 
-        ProgrammingBook prgB1 = new ProgrammingBook(" JAVA ", 65000.0);
-        ProgrammingBook prgB2 = new ProgrammingBook(" JAVA ", 65000.0);
-        ProgrammingBook prgB3 = new ProgrammingBook(" PHP ", 32500.0);
-        ProgrammingBook prgB4 = new ProgrammingBook(" JAVA ", 65000.0);
-        ProgrammingBook prgB5 = new ProgrammingBook(" PHP ", 32500.);
+        Book[] fictionBook = new FictionBook[2];
+        Book[] programBook = new ProgrammingBook[2];
+        System.out.println(" FictionBook :");
+        for (int i = 0; i < fictionBook.length; i++) {
+            fictionBook[i] = new FictionBook();
+            System.out.println(" Enter a id :  ");
+            fictionBook[i].setBookCode((int)sc.nextInt());
+            sc.nextLine();
+            System.out.println(" Enter a name :  ");
+            fictionBook[i].setName((String) sc.nextLine());
+            System.out.println(" Enter a price :");
+            fictionBook[i].setPrice((double) sc.nextDouble());
+            sc.nextLine();
+            System.out.println(" Enter a author :");
+            fictionBook[i].setAuthor((String) sc.nextLine());
+        }
+        double sumFictionBook = FictionBook.getTotalMoney();
+        System.out.println(" The Money: " + sumFictionBook);
+        for (Book book : fictionBook)
+            System.out.println(book.show());
 
-        FictionBook fb1 = new FictionBook(43000.0);
-        FictionBook fb2 = new FictionBook(43000.0);
-        FictionBook fb3 = new FictionBook(43000.0);
-        FictionBook fb4 = new FictionBook(43000.0);
-        FictionBook fb5 = new FictionBook(43000.0);
+
+        for (int j = 0; j < programBook.length; j++) {
+            programBook[j] = new ProgrammingBook();
+            System.out.println(" Enter a id2 :  ");
+            programBook[j].setBookCode((int) sc.nextInt());
+            sc.nextLine();
+            System.out.println(" Enter a name2 :  ");
+            programBook[j].setName((String) sc.nextLine());
+            System.out.println(" Enter a price2 :");
+            programBook[j].setPrice((double) sc.nextDouble());
+            sc.nextLine();
+            System.out.println(" Enter a author2 :");
+            programBook[j].setAuthor((String) sc.nextLine());
+            System.out.println(" Enter a language :");
+            ProgrammingBook a = (ProgrammingBook) programBook[j];
+            a.setLanguage((String) sc.nextLine());
+            System.out.println(" Enter is framework : ");
+            ProgrammingBook b = (ProgrammingBook) programBook[j];
+            b.setFrameWork((boolean)sc.nextBoolean());
+
+        }
+        double sumProgrammingBook = ProgrammingBook.getTotalMoney();
+        System.out.println(" The Money: " + sumProgrammingBook);
+        for (Book book : programBook)
+           System.out.println(book.show());
 
         System.out.println(" Counter of JAVA book = " + ProgrammingBook.getCountJava());
-        System.out.println(" Total Money = " + (ProgrammingBook.getTotalMoney() +
-                FictionBook.getTotalMoney()));
+
+        }
     }
-}
+
+
