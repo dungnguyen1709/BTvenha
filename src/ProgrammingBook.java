@@ -3,7 +3,6 @@ public class ProgrammingBook extends Book {
     private boolean frameWork = true;
     private final String JAVA_BOOK = "JAVA";
     private static int countJava = 0;
-    private static double sumBookPrice = 0;
 
 
     public ProgrammingBook() {
@@ -13,7 +12,7 @@ public class ProgrammingBook extends Book {
     public ProgrammingBook(String language, double price) {
         this.language = language;
         super.setPrice(price);
-        sumBookPrice += price;
+
 
         if (language.equals(JAVA_BOOK)) {
             countJava++;
@@ -24,9 +23,6 @@ public class ProgrammingBook extends Book {
         return countJava;
     }
 
-    public static double getTotalMoney() {
-        return sumBookPrice;
-    }
 
     public ProgrammingBook(int bookCode, String name, double price, String author, String language, boolean frameWork) {
         super(bookCode, name, price, author);
