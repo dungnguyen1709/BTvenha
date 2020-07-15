@@ -6,8 +6,8 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        Book[] fictionBook = new FictionBook[2];
-        Book[] programBook = new ProgrammingBook[2];
+        Book[] fictionBook = new FictionBook[5];
+        Book[] programBook = new ProgrammingBook[5];
         System.out.println(" FictionBook :");
         for (int i = 0; i < fictionBook.length; i++) {
             fictionBook[i] = new FictionBook();
