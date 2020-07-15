@@ -27,7 +27,7 @@ public class Main {
         for (Book book : fictionBook)
             System.out.println(book.show());
 
-
+        System.out.println(" ProgrammingBook :");
         for (int j = 0; j < programBook.length; j++) {
             programBook[j] = new ProgrammingBook();
             System.out.println(" Enter a id2 :  ");
